@@ -1,7 +1,6 @@
 package com.bbyv.AccountManagementSystem.dto.converter;
 
 import com.bbyv.AccountManagementSystem.dto.AccountCustomerDto;
-import com.bbyv.AccountManagementSystem.dto.CustomerAccountDto;
 import com.bbyv.AccountManagementSystem.dto.CustomerDto;
 import com.bbyv.AccountManagementSystem.model.Customer;
 import org.springframework.stereotype.Component;

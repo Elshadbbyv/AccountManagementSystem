@@ -7,6 +7,8 @@ import com.bbyv.AccountManagementSystem.repository.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.HashSet;
 
@@ -22,8 +24,11 @@ public class AccountManagementSystemApplication implements CommandLineRunner {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(AccountManagementSystemApplication.class, args);
+		SpringApplication.run(AccountManagementSystemApplication.class, args);}
 
+	@Bean
+	public RestTemplate restTemplate(){
+		return new RestTemplate();
 	}
 
 	@Override
