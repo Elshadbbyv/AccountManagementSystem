@@ -1,21 +1,20 @@
-## For Java 11, try this
-#FROM adoptopenjdk/openjdk11:alpine-jre AS build
-#
-##
-#COPY build.gradle gradlew ./
-#COPY .gradle .gradle
-#RUN ./gradlew dependency:resolve
-#
-#COPY src src
-#RUN ./gradlew package
-#
-##
-#FROM openjdk:11
-#
-#WORKDIR /AccountManagementSystem
-#
-##
-#COPY ${JAR_FILE} AccountManagementSystem.jar
-#ENTRYPOINT["java", "-jar", "AccountManagementSystem.jar"]
-#
-##
+FROM amazoncorretto:17 AS build
+WORKDIR /AccountManagementSystem
+
+ARG JAR_FILE=build/libs/AccountManagementSystem-0.0.1.jar
+
+ADD $JAR_FILE AccountManagementSystem.jar
+
+# Entry point for running the application
+ENTRYPOINT ["java", "-jar", "AccountManagementSystem.jar"]
+EXPOSE 8080
+
+
+
+
+# Copy the Gradle files to the container
+
+
+
+
+# Expose the port your application uses
